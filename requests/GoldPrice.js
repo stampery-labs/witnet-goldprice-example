@@ -21,6 +21,13 @@ const mycurrencytransfer = new Witnet.Source("https://www.mycurrencytransfer.com
   .multiply(1000)
   .round()
 
+const inversoro = new Witnet.Source("https://www.inversoro.es/datos/?period=3year&xignite_code=XAU&currency=EUR&weight_unit=ounces")
+  .parseMapJSON()
+  .getMap("table_data")
+  .getFloat("metal_price_current")
+  .multiply(1000)
+  .round()
+
 // Filters out any value that is more than 1.5 times the standard
 // deviationaway from the average, then computes the average mean of the
 // values that pass the filter.
@@ -46,6 +53,7 @@ const request = new Witnet.Request()
   .addSource(coinyep) // Use source 1
   .addSource(dataasg) // Use source 2
   .addSource(mycurrencytransfer) // Use source 3
+  .addSource(inversoro) // Use source 4
   .setAggregator(aggregator) // Set the aggregator function
   .setTally(tally) // Set the tally function
   .setQuorum(4, 1, 2, 5, 70) // Set witness count
