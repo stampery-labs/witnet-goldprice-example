@@ -1,3 +1,5 @@
+⚠️ This repository has been deprecated in favor of [**`price-feed-examples`**](https://github.com/stampery-labs/witnet-price-feed-examples) repository.
+
 # Witnet Gold Price Feed Example
 
 `witnet-goldprice-example` is a price feed example that aims to illustrate how to build data feeds by using Witnet and their development tools. It was developed following the steps described in the [Witnet documentation](https://docs.witnet.io/tutorials/bitcoin-price-feed/introduction/).
